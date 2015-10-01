@@ -25,6 +25,7 @@ var express   = require('express'),
     .post(function(req, res, next) {
       req.collection.insert(req.body, {}, function(e, results, next){
         if (e) { return next(e); }
+        console.log(results);
         res.send(results[0]);
       });
     });
